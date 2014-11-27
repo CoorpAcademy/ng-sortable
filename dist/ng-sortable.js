@@ -551,7 +551,7 @@
             dragHandled, //drag handled.
             isEnabled = true; //sortable is enabled
 
-          hasTouch = $window.hasOwnProperty('ontouchstart');
+          hasTouch = typeof $window.hasOwnProperty === 'function' ? $window.hasOwnProperty('ontouchstart') : false;
 
           if (sortableConfig.handleClass) {
             element.addClass(sortableConfig.handleClass);
